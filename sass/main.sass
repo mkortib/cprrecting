@@ -1,0 +1,395 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+// ::placeholder
+// 	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+
+body
+	background-color: #E5E5E5
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		// border: #666 1px solid
+		// outline: none
+		// &:focus:required:invalid
+		// 	border-color: red
+		// &:required:valid
+		// 	border-color: green
+	&.ishome
+		// .main_head
+		// 	height: 100vh
+		// 	// width: 100%
+
+
+.main-content-wrapper 
+	background-color: #E5E5E5
+	padding: 129px 30px 80px
+	max-width: 1300px
+	width: 100%
+	margin: 0 auto
+	box-sizing: border-box
+	background-color: #fff
+
+.radio * 
+	cursor: pointer
+
+
+.radio input 
+	opacity: 0
+
+
+.radio span 
+	position: relative
+	display: inline-block
+	margin-left: 0
+	vertical-align: top
+	width: 14px; height: 14px
+	border-radius: 2px
+	border: 2px solid #ccc
+
+
+.radio:hover span 
+	border-color: #ccc
+
+
+.radio span:before 
+	content: ""; /* comment content to use custom icon classes */
+	position: absolute
+	top: 0 
+	left: 0 
+	right: 0 
+	bottom: 0
+	opacity: 0
+	text-align: center
+	font-size: 10px
+	line-height: 10px
+	vertical-align: middle
+	color: #111
+
+.radio span:after
+	content: ''
+	width: 6px
+	height: 6px
+	background-color: #ccc
+	position: absolute
+	right: 2px
+	top: 2px
+	border-radius: 50%
+	z-index: 2
+
+
+/* override for radio */
+.radio span 
+	border-radius: 50%
+
+.radio span:before 
+	z-index: 5
+	content: ""
+	width: 6px
+	height: 6px
+	margin: 2px auto
+	background-color: #9CD845
+	border-radius: 100px
+
+
+.radio input[type=radio]:checked + span 
+	background-color: #fff
+
+
+.radio input[type=radio]:checked + span:before 
+	color: #fff
+	opacity: 1
+	transition: color .3s ease-out
+
+.calculate-wrap
+	margin-top: 50px
+.calculate-descr
+	h2
+		font-family: "GothamPro", sans-serif
+		font-size: 42px
+		font-weight: 300
+
+.calculate-blocks
+	color: #292929 
+	width: 100%
+	display: flex
+	margin-top: 44px
+	.calculate-block, .calculate-res
+		background-color: #f8f8f8
+		border: 1px solid red
+		padding: 40px 34px
+	.calculate-block
+		width: 58%
+	.calculate-res
+		width: 40%
+		margin-left: 2%
+
+.cal-form
+	position: relative
+	.room-amount, .section-amount
+		margin-bottom: 10px
+		h4
+			font-family: "GothamPro", sans-serif
+			font-weight: bold
+			font-size: 17px
+	.room-amount
+		position: relative
+		p
+			position: absolute
+			top: 0
+			right: 0
+			font-weight: 300
+			font-size: 13px
+			color: rgba(#292929, .6)
+			margin: 0
+			border-bottom: .5px solid rgba(#292929, .6)
+			cursor: pointer
+
+
+	.radio-wrap
+		// display: inline-block
+		margin-top: 14px
+	.radio
+		// width: 24%
+		display: inline-block
+		span
+			margin-left: 5px
+			vertical-align: middle
+			bottom: 2px
+		input
+			position: relative
+			left: 20px
+		.f-room
+			margin-left: -16px // change for responsive
+		label
+			font-family: "GothamPro", sans-serif
+			font-size: 15px
+
+
+
+// .f-col, .s-col
+// 	display: inline-block
+	
+
+
+.square-header, .installment-header
+	label
+		display: flex
+		margin: 0
+		h4
+			margin-bottom: 0
+		input
+			text-align: center
+			color: #292929
+			font-size: 12px 
+			position: relative
+			top: -2px
+			width: 130px 
+			margin: 0
+			margin-left: 10px
+			border: none
+			outline: none
+			border-bottom: 2px solid rgba(#292929, .4)
+			&:disabled
+				background-color: transparent
+
+.square-calc, .installment-calc
+	margin-top: 14px
+	display: flex
+	p
+		font-size: 12px
+		position: relative
+		top: 7px
+	input
+		width: 350px
+		margin: 0 20px
+
+.square, .installment
+	padding-bottom: 15px
+	position: relative
+	margin-bottom: 20px
+	&:after
+		position: absolute
+		content: ''
+		width: 100%
+		bottom: 0
+		left: 0
+		background-color: rgba(#292929, .1)
+		height: 2px
+
+.installment
+	margin-top: 10px
+
+.send-wrap
+	width: 100%
+	margin-top: 40px
+	display: flex
+	// flex-direction: column
+	input[type=text]
+		display: inline-block
+		background-color: transparent
+		text-align: center
+		color: #292929
+		font-size: 14px 
+		position: relative
+		top: -2px
+		width: 50%
+		margin: 0
+		// margin-left: 10px
+		border: none
+		outline: none
+		border-bottom: 2px solid rgba(#292929, .4)
+		margin-right: 20px
+	input[type=button]
+		display: inline-block
+		border: none
+		border-radius: 200px
+		font-size: 14px
+		font-family: "GothamPro", sans-serif
+		font-weight: bold
+		text-transform: uppercase
+		color: #fff
+		padding: 10px 30px
+		background-color: #8DCC33
+		cursor: pointer
+		margin-left: 10px
+		// width: 100%
+
+.calculate-res
+	position: relative
+	.res-descr, .res-price, .res-all
+		position: relative
+		padding: 0 10px
+	h4, p
+		margin: 0
+		padding: 0
+	h4
+		line-height: 17px
+		font-size: 17px
+		font-weight: normal
+	p
+		color: rgba(#292929, .5)
+	.res-descr, .res-price
+		&:after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 2px
+			background-color: rgba(#292929, .1)
+			left: 0
+			// bottom: -4px
+	.res-descr
+		// padding-bottom: 1px
+		p
+			margin-bottom: 10px
+	.res-price
+		margin-top: 40px
+		p
+			margin-bottom: 10px
+		span
+			font-weight: bold
+	.res-all
+		margin-top: 30px
+		p
+			font-weight: bold
+			font-size: 24px
+			color: #292929
+	a
+		text-decoration: none
+		// position: absolute
+		bottom: 40px
+		// left: 25%
+		// justify-content: center
+		display: inline-block
+		margin-top: 40px
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 14px
+		background-color: #31A4DB
+		border-radius: 40px
+		color: #fff
+		padding: 10px 40px
+			
+	
+@media screen and (max-width: 1280px)
+	.square-calc input
+		width: 332px
+	.installment-calc input
+		width: 300px
+	.send-wrap input[type=button]
+		padding: 10px 20px
+		font-size: 12px
+	.calculate-res a
+		font-size: 12px
+	.send-wrap input[type=text]
+		font-size: 12px
+
+@media screen and (max-width: 1024px)
+	.calculate-blocks
+		flex-direction: column
+		.calculate-block, .calculate-res
+			width: 100%
+			padding: 30px 20px
+		.calculate-res
+			margin-left: 0
+			margin-top: 3%
+			text-align: center
+			// padding-bottom: 100px
+			.save-count
+				text-align: center
+				
+			.res-price 
+				p
+					margin-bottom: 15px
+			.res-all
+				h4
+					margin-top: 50px
+	.calculate-descr h2
+		font-size: 33px
+
+@media screen and (max-width: 600px)
+	.cal-form .radio .f-room
+		margin-left: 4px
+	.cal-form .radio .lm
+		margin-left: 1px
+	.square-calc, .installment-calc
+		input
+			width: 187px
+			margin: 0 15px
+		p
+			font-size: 10px
+	.installment-header label input, .square-header label input
+		width: 100px
+	.send-wrap
+		margin-top: 5px
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		input[type=text]
+			margin-top: 20px
+			margin-right: 0
+			&:first-child
+				margin-top: 0
+		input[type=button]
+			margin-top: 20px
+			margin-left: 0
+	.calculate-blocks .calculate-block, .calculate-blocks .calculate-res
+		// padding: 0
+		padding: 50px 20px 30px 20px
+	.cal-form .room-amount p
+		top: -33px
+
+
+
+@import "media" // Always at the end
